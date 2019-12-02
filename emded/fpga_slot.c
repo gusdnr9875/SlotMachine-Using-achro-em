@@ -10,12 +10,12 @@
 
 #define MAX_BUFF 32
 
-
+/*
 void user_signal1(int sig)
 {
 	quit = 1;
 }
-
+*/
 
 int main(void) {
 
@@ -32,16 +32,21 @@ int main(void) {
 	int led_dev;
 	int dot_dev;
 	// 기기제어를 위한 변수
-	unsigned char string[32] = "Welcome to slot machine!";
-
+	unsigned char string[32] = "Welcome to slot machine!push btn";
+	unsigned char retval2; // fnd 를 제어하기위한 문자변수
+	char verify[4] = { '1','1','1','1' }; //fnd를 사용하기위한 코드
+	int motor_action; //모터의 동작,방향, 스피드 
+	int motor_direction;
+	int motor_speed;
+	unsigned char motor_state[3]; // 모터상태제어 
 	//** 응용 동작을 위한 변수 **//
-
+	unsigned char data_led[4] = { 0,255,124,64 }; //led  data
 
 	/*----------------*/ // TEXT_LCD
 	int button_clicked = 0; //버튼이 클릭되었는지 확인 
 
 	/*----------------*/ // LED
-	int led_dev;
+	
 	void Clear_LED();
 	unsigned char CalcLED();
 
@@ -87,12 +92,17 @@ int main(void) {
 		close(motor_dev);
 		return -1;
 	}
+	
+	// init 해주는 과정 
+
+
 	//(void)signal(SIGINT, user_signal1);
 	//환영메시지 출력 
 	write(text_lcd_dev, string, MAX_BUFF);
 	//현란한 LED 출력
-	for (int i = 1; i <= 4; i++) {
-		write(led_dev, (unsigned char)i, 1);
+	for (int i = 0; i < 12; i++) {
+		write(led_dev, &data_led[i%4], 1);
+		usleep(1000000);
 	}
 	while (1) { // 계속돌아야되서 무한루프
 		int i;
@@ -107,14 +117,34 @@ int main(void) {
 				break;
 			}
 		}
+
 		if (button_clicked == 1)
 			break;
 		printf("\n");
 	}
 
 	
-	write(dot_dev, 1, 10);
+	//write(dot_dev, 1, 10);
 
+	retval2 = write(fnd_dev, verify, 4);
+	if (retval2<0) {
+		printf("WriteError!\n");
+		return -1;
+	}
+	sleep(1);
+
+	motor_state[0] = (unsigned char)1;
+	motor_state[1] = (unsigned char)1;
+	motor_state[2] = (unsigned char)255;
+	write(motor_dev, motor_state, 3);
+
+	for (int i = 0; i < 12; i++) {
+		write(led_dev, &data_led[i % 4], 1);
+		usleep(1000000);
+	}
+
+	//환영메시지 출력 
+	write(text_lcd_dev, "sex! sex on  beach ,y da", MAX_BUFF);
 	close(push_dev);
 	close(dip_dev);
 	close(buzzer_dev);
