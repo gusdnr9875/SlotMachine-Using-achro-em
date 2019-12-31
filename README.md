@@ -43,14 +43,18 @@ LED : 슬롯머신이 끝나면 화려한 점등효과 발생 , 시작을 알리
 
 ### 기본 출력화면
 
-<img src="https://user-images.githubusercontent.com/37360089/70724391-dc08db80-1d3d-11ea-90aa-e28e8c804f2e.png"></img> <br>
+<img src="https://user-images.githubusercontent.com/38147253/71610753-f9abc100-2bd6-11ea-83bc-4f39de64fc3e.png"></img> <br>
 
-<img src="https://user-images.githubusercontent.com/37360089/70725416-aebd2d00-1d3f-11ea-8e7d-9aee8bb4b99c.png"></img>
-
-
+<img src="https://user-images.githubusercontent.com/38147253/71610765-15af6280-2bd7-11ea-8d77-e30d6011aee2.png"></img>
 
 
+성공화면
 
+<img src="https://user-images.githubusercontent.com/38147253/71610775-311a6d80-2bd7-11ea-80b1-831289bfe58d.png"></img>
+
+실패화면
+
+<img src="https://user-images.githubusercontent.com/38147253/71610783-4c857880-2bd7-11ea-8edd-c5b3b562f424.png"></img>
 
 역할분담
 --
