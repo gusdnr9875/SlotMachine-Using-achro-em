@@ -18,7 +18,7 @@ Network Layer
 기본기능 출력화면
 --
 ### 네트워크 카드 선택
-<img src="https://user-images.githubusercontent.com/37360089/70724357-ce535600-1d3d-11ea-96c2-1b99771d1988.png"></img>
+<img src="https://user-images.githubusercontent.com/38147253/71610588-a38a4e00-2bd5-11ea-893f-18d312dc25a6.png"></img>
 
 ### 필터링
 <img src="https://user-images.githubusercontent.com/37360089/70724401-e4611680-1d3d-11ea-896f-13df04daeafa.png"></img>
