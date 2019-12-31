@@ -42,7 +42,7 @@ P2P
 --
 torrent 사용, ip 주소로 확인
 <div>
-	<img src="https://user-images.githubusercontent.com/37360089/70724854-b4664300-1d3e-11ea-8112-28baa5947a1f.png"></img>
+	<img src="https://github.com/gusdnr9875/SlotMachine-Using-achro-em/issues/1#issue-544089030"></img>
 	<img src="https://user-images.githubusercontent.com/37360089/70725028-05763700-1d3f-11ea-88f4-906ee42582e0.png"></img>
 </div>
 
