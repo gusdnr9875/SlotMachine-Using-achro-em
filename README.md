@@ -83,26 +83,23 @@ FTP
 	<th>이름</th>
 	<th>내용</th>
 	<tr>
-	    <td>김진엽</td>
-	    <td>설계발표, 기본기능 구현, 필터링 기능 구현</td>
+	    <td>문준혁</td>
+	    <td>FND 기능 구현, Text lcd 기능 구현</td>
 	</tr>
 	<tr>
 	    <td>박현욱</td>
-	    <td>기본기능 구현, DNS기능 구현, 구현결과 발표</td>
+	    <td>Step Moter 기능 구현, Dot matrix 기능 구현, Step motor 기능 구현, Qt GUI 구현</td>
 	</tr>
 	<tr>
-	    <td>양소영</td>
-	    <td>기본기능 구현,  P2P기능 구현, 발표자료 준비</td>
+	    <td>이세민</td>
+	    <td>발표 및 PPT 제작, Buzzer 기능 구현, Push Switch기능 구현</td>
 	</tr>
 	<tr>
-	    <td>이상현</td>
-	    <td>설계 자료준비, 기본기능 구현, FTP기능 구현</td>
+	    <td>이왕규</td>
+	    <td>LED 기능 구현, Qt GUI 구현</td>
 	</tr>
-	<tr>
-	    <td>손지용</td>
-	    <td>자료조사 ,기본기능 구현, HTTP 필터링 구현</td>
-	</tr>
-	</table>
+	
+</table>
 	
 	
 	
