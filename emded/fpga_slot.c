@@ -38,7 +38,6 @@ unsigned char load_data[4] = { 24,36,66,129 };
 unsigned char exit_data[4] = { 204, 102, 51, 153 };
 
 
-
 unsigned char fpga_number[10][10] = {
 	{ 0x3e,0x7f,0x63,0x73,0x73,0x6f,0x67,0x63,0x7f,0x3e }, // 0
 	{ 0x0c,0x1c,0x1c,0x0c,0x0c,0x0c,0x0c,0x0c,0x0c,0x1e }, // 1
@@ -51,8 +50,6 @@ unsigned char fpga_number[10][10] = {
 	{ 0x3e,0x7f,0x63,0x63,0x7f,0x7f,0x63,0x63,0x7f,0x3e }, // 8
 	{ 0x3e,0x7f,0x63,0x63,0x7f,0x3f,0x03,0x03,0x03,0x03 } // 9
 };
-
-
 
 void user_signal1(int sig)
 {
@@ -121,12 +118,12 @@ int main(void) {
 		thr_id = pthread_create(&p_thread[1], NULL, t_function2, (void *)p2);
 
 		// fnd 출력
-		//char* text_value = "0000";
+		
 		for (int i = 0; i < str_size; i++)
 		{
 			verify[i] = text_value[i] - 0x30;
 		}
-		//retval2 = write(fnd_dev, &verify, 4);
+		
 		//버튼 클릭전 
 		while (1) { 
 			int i;
@@ -153,9 +150,6 @@ int main(void) {
 		motor_state[1] = (unsigned char)0;
 		motor_state[2] = (unsigned char)255;
 		write(motor_dev, motor_state, 3);
-
-		//thr_id = pthread_create(&p_thread[1], NULL, t_function2, (void *)p2);
-		//retval2 = read(fnd_dev, &verify, 4);
 
 		for (int i = 0; i < 41; i++) {
 			random_num = rand() % 10;
@@ -202,7 +196,6 @@ int main(void) {
 		retval2 = write(fnd_dev, &verify, 4);
 		usleep(1000000); //1초 
 
-
 		random_num2 = rand() % 20 + 41;
 		for (int i = 0; i < random_num2; i++) {
 			random_num = rand() % 10;
@@ -219,7 +212,7 @@ int main(void) {
 		{
 			verify[i] = text_value[i] - 0x30;
 		}
-		//write(dot_dev, fpga_number[7], str_size);
+		
 		retval2 = write(fnd_dev, &verify, 4);
 		usleep(1000000); //1초 
 		if (adsa[0] == '7') {
@@ -236,7 +229,7 @@ int main(void) {
 			sleep(1);
 
 			write(text_lcd_dev, "                                ", MAX_BUFF);
-			//usleep(1000000); //1초 
+			
 			//환영메시지 출력 
 			write(text_lcd_dev, "congraturation!!                ", MAX_BUFF);
 			buzzer_state = 1;
@@ -244,11 +237,11 @@ int main(void) {
 			usleep(100000000); //100초 
 		}
 		else {
-			//환영메시지 출력 
+			//실패메시지 출력 
 			buzzer_state = 0;
 			thr_id = pthread_create(&p_thread[3], NULL, t_function4, (void *)p4);
 			write(text_lcd_dev, "                                ", MAX_BUFF);
-			//usleep(1000000); //1초 
+			
 			write(text_lcd_dev, "you lose!       Try again       ", MAX_BUFF);
 		}
 
@@ -262,7 +255,6 @@ int main(void) {
 	return 0;
 
 }
-
 
 
 void *t_function(void *data)
