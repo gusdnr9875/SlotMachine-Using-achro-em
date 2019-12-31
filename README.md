@@ -3,78 +3,53 @@
 
 기본기능
 --
-Application Layer
-* HTTP, P2P, DNS
 
-Transport Layer(TCP / UDP)
-* Source Port, Destination Port
-* (TCP) Sequence number, Acknowledgment number
+Dot matrix : 1부터 9까지 랜덤한 숫자를 번갈아가며 출력후 멈춤
 
-Network Layer
-* Source IP, Destination IP
+FND : Dot matrix 에서 멈춘 숫자를 차례대로 출력
 
-* 패킷 길이, Source MAC address, Destination MAC address, EtherType, Header 길이, TTL
+Text LCD : 환영 , 성공  , 실패 메시지 출력
+
+Step Motor : 슬롯머신이 돌아가는 모양을표현
+
+Dip Switch : 슬롯머신 시작기능
+
+부저 : 슬롯머신이 끝나면 팡파레 및 우울한 효과음 발생
+
+LED : 슬롯머신이 끝나면 화려한 점등효과 발생 , 시작을 알리는 점등효과
+
 
 기본기능 출력화면
 --
-### 네트워크 카드 선택
-<img src="https://user-images.githubusercontent.com/38147253/71610588-a38a4e00-2bd5-11ea-893f-18d312dc25a6.png"></img>
+### 시스템 시나리오 
+<img src="https://user-images.githubusercontent.com/38147253/71610696-90c44900-2bd6-11ea-9786-e11e3b10c61e.jpg"></img>
 
-### 필터링
-<img src="https://user-images.githubusercontent.com/37360089/70724401-e4611680-1d3d-11ea-896f-13df04daeafa.png"></img>
+### 시작화면
+<img src="https://user-images.githubusercontent.com/38147253/71610723-ca954f80-2bd6-11ea-841f-11cf3fe0c38a.png"></img>
+### 주요 개발 이슈 & 방법
+
+(1) 쓰레드를 사용해서 동시에 여러 개의 디바이스들을 제어
+
+(2) 모듈의 결합 및 테스트코드 작성을 위해 다른 조들의 테스트코드 리뷰
+
+(3) 랜덤숫자를 표현하기 위해 Dot-matrix와 rand() 함수의 연동 코드 작성
+
+(4) 성공과 실패를 표현하기 위해 부저출력의 빈도를 바꿔서 2가지로 표현
+
+(5) Dot-matrix 에 표시된 숫자를 FND에 표현하는 코드 작성
+
+(6) 성공시 시각표현을 부각하기위해 LED에 다양한 패턴을 주어 화려한 효과 표현
+
 
 ### 기본 출력화면
+
 <img src="https://user-images.githubusercontent.com/37360089/70724391-dc08db80-1d3d-11ea-90aa-e28e8c804f2e.png"></img> <br>
 
 <img src="https://user-images.githubusercontent.com/37360089/70725416-aebd2d00-1d3f-11ea-8e7d-9aee8bb4b99c.png"></img>
 
-HTTP
---
-포트번호가 80 -> http, 443 -> https 
-<div>
-	<img src="https://user-images.githubusercontent.com/37360089/70724568-2ee29300-1d3e-11ea-822a-01a2b4466149.png"></img>
 
-<img src="https://user-images.githubusercontent.com/37360089/70724588-34d87400-1d3e-11ea-9cfd-99184eda7dcf.png"></img>
 
-</div>
 
-P2P
---
-torrent 사용, ip 주소로 확인
-<div>
-	<img src="https://github.com/gusdnr9875/SlotMachine-Using-achro-em/issues/1#issue-544089030"></img>
-	<img src="https://user-images.githubusercontent.com/37360089/70725028-05763700-1d3f-11ea-88f4-906ee42582e0.png"></img>
-</div>
-
-DNS
---
-포트번호 53번
-Transaction_ID와 DomainName을 출력
-
-<img src="https://user-images.githubusercontent.com/37360089/70726269-2d669a00-1d41-11ea-8dbd-8ca9effb417e.png"></img>
-
-FTP
---
-### FileZilla Server 화면
-<img src="https://user-images.githubusercontent.com/37360089/70725503-d9a78100-1d3f-11ea-8773-7c4c430744da.png"></img>
-
-### 접속하려는 컴퓨터 cmd 화면
-<img src="https://user-images.githubusercontent.com/37360089/70725578-00fe4e00-1d40-11ea-95fa-ef91ae640e35.png"></img>
-
-### 콘솔 출력 화면 
-<div>
-<img src="https://user-images.githubusercontent.com/37360089/70725795-5f2b3100-1d40-11ea-81c4-34f09cc250ed.png"></img>
-
-<img src="https://user-images.githubusercontent.com/37360089/70725814-66ead580-1d40-11ea-845d-1f5c730a0d34.png"></img>
-
-<img src="https://user-images.githubusercontent.com/37360089/70725830-6e11e380-1d40-11ea-98cc-605ca22b4c73.png"></img>
-
-<img src="https://user-images.githubusercontent.com/37360089/70725839-72d69780-1d40-11ea-9962-6b04d432ea86.png"></img>
-
-<img src="https://user-images.githubusercontent.com/37360089/70725874-81bd4a00-1d40-11ea-924d-dbb6bd74ec93.png"></img>
-
-<img src="https://user-images.githubusercontent.com/37360089/70725896-897cee80-1d40-11ea-9eaa-f1c662eb1d13.png"></img>
-</div>
 
 
 역할분담
